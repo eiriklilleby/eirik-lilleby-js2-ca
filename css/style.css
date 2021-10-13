@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  font-family: "Lato", sans-serif;
+}
+
+header {
+  background: #3989a1;
+  min-height: 5vh;
+  display: flex;
+}
+
+.container-menu {
+  display: flex;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+li {
+  margin: 0rem 3rem;
+  color: white;
+  list-style: none;
+  font-size: 18px;
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 42px;
+  margin-top: 2rem;
+}
+
+.container {
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+  width: 60%;
+  height: 100%;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  background: #3989a1;
+  width: 350px;
+  height: 320px;
+  color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+button {
+  border: none;
+  border-radius: 1rem;
+  width: 80%;
+  height: 42px;
+  background: #235182;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+span {
+  font-style: italic;
+}
+
+footer {
+  background: #3989a1;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+}
+
+.message {
+  border: 1px solid lightgrey;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.message.error {
+  border-color: red;
+  color: red;
+  background: rgba(255, 0, 0, 0.05);
+}
+
+.message.warning {
+  border-color: yellow;
+  color: yellow;
+  background: rgba(255, 0, 0, 0.05);
+}
+
+.message.success {
+  border-color: green;
+  color: green;
+  background: rgba(255, 0, 0, 0.05);
+}
