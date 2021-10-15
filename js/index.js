@@ -1,19 +1,16 @@
-import { baseUrl } from "./settings/api.js";
-import { displayMessage } from "./components/displayMessage.js";
-import { createArticle } from "./components/createArticle.js";
+import { createArticleListHtml } from "./components/createArticleHtml.js";
+import { getStuffFromApi } from "./components/getStuffFromApi.js";
+import { setDeleteListener } from "./components/onDelete.js";
 
-const articlesUrl = baseUrl + "articles";
+export const container = document.querySelector(".container");
 
-export async function makeApiCall() {
-  try {
-    const response = await fetch(articlesUrl);
-    const json = await response.json();
+let allArticles = [];
 
-    let articles = json;
-
-    createArticle(articles);
-  } catch (error) {
-    displayMessage("error", error, ".container");
-  }
+export async function setup() {
+  allArticles = await getStuffFromApi();
+  createArticleListHtml(allArticles);
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => setDeleteListener(button, allArticles));
 }
-makeApiCall();
+
+setup();
