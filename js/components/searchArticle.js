@@ -1,5 +1,6 @@
 import { createArticleListHtml } from "./createArticleHtml.js";
 import { displayMessage } from "./displayMessage.js";
+import { handleClick } from "./onToggle.js";
 
 export function searchArticle(articles) {
   const search = document.querySelector(".search");
@@ -12,14 +13,13 @@ export function searchArticle(articles) {
         return true;
       }
     });
-    createArticleListHtml(filteredArticles);
 
-    console.log(filteredArticles);
+    createArticleListHtml(filteredArticles);
 
     if (filteredArticles.length === 0) {
       return displayMessage(
         "error",
-        "No articles matched you're search result",
+        "No articles matched the search result",
         ".container"
       );
     }
